@@ -1,1 +1,15 @@
-<p>repo works!</p>
+<div class="container">
+    <app-form (searchOutput)="repoSearch($event)"></app-form>
+    <div class="col-md-3"  *ngFor="let repos of repo">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h4 class="card-title">{{repos.name}}</h4>
+              <p class="card-text">{{repos.name}}</p>
+              <p class="card-text">{{repos.description}}</p>
+              <p class="card-text">{{repos.language}}</p>
+              <hr>
+              <p class="card-text"><small class="text-muted">{{repos.created_at | date}}</small></p>
+            </div>
+        </div>
+    </div>
+</div>

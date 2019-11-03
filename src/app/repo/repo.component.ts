@@ -10,7 +10,7 @@ import { Repo } from '../repo';
 export class RepoComponent implements OnInit {
 
   repo: Repo;
-  constructor(public repService: SearchService) {}
+  constructor(public repService: SearchService){}
 
   repoSearch(searchName){
     this.repService.getRepos(searchName).then(
@@ -23,8 +23,6 @@ export class RepoComponent implements OnInit {
       }
     );
   }
-
   ngOnInit() {
   }
-
 }
