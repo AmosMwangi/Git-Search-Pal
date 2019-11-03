@@ -9,6 +9,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchformComponent } from './searchform/searchform.component';
 import { DatePipe } from './date.pipe';
 import { HightlightDirective } from './hightlight.directive';
+import { HttpClient } from '@angular/common/http';
+import { NotfoundComponent } from './notfound/notfound.component';
+
 
 @NgModule({
   declarations: [
@@ -18,11 +21,13 @@ import { HightlightDirective } from './hightlight.directive';
     NavbarComponent,
     SearchformComponent,
     DatePipe,
-    HightlightDirective
+    HightlightDirective,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]
