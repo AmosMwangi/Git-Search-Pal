@@ -1,58 +1,45 @@
 <section>
     <div class="container">
         <app-searchform (searchOutput)= "searchs($event)"></app-searchform>
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="{{user.avatar_url}}" alt="">
-                            <div class="card-title">
-                                <a href="{{user.html_url}}"><button class="btn btn-primary"> View in Github </button></a>
-                            </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{{user.avatar_url}}" alt="">
+                        <div class="card-title">
+                            <a href="{{user.html_url}}"><button class="btn btn-primary"> View in Github </button></a>
                         </div>
-                        <div class="col-md-6" style="margin-top: 160px;">
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-header">
-                                    <h3 class="text-center">{{user.login}}</h3>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Repository:  {{user.public_repos}}</li>
-                                    <li class="list-group-item">Following: {{user.following}}</li>
-                                    <li class="list-group-item">Followers: {{ user.followers }}</li>
-                                </ul>
+                    </div>
+                    <div class="col-md-6" style="margin-top: 160px;">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-header">
+                                <h3 class="text-center">{{user.login}}</h3>
                             </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" id="g">Repository:  {{user.public_repos}}</li>
+                                <li class="list-group-item" id="y">Following: {{user.following}}</li>
+                                <li class="list-group-item" id="r">Followers: {{ user.followers }}</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-    </div>
-</section>
-
-<section>
-    <h3 class="text-center">Repository's</h3>
-    <div class="container">
-        <div class="card" *ngFor="let repos of repo" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title"> <u> Repo {{repos.name}} </u></h5>
-                <p class="card-text">Description: {{repos.description}}</p>
-                <p class="card-text">Language: {{repos.language}}</p>
-                <p class="card-text text-muted"> <i><i> Created {{repos.created_at | date}} </i></i></p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- 
+<section>
+    <h3 class="text-center">Repository's</h3>
+    <div class="container" id="repo">
+      <div class="card"  *ngFor="let repos of repo" style="width: 22rem;" class="repo">
+        <div class="card-body" id="repo-card" >
+            <h5 class="card-title"> <u> Repo {{repos.name}} </u></h5>
+            <p class="card-text">Description: {{repos.description}}</p>
+            <p class="card-text">Language: {{repos.language}}</p>
+            <p class="card-text text-muted"> <i><i> Created {{repos.created_at | date}} </i></i></p>
+          </div>
+      </div>
+    </div>
+</section>
 
 
-<div class="card" *ngFor="let repos of repo" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"> <u> Repo {{repos.name}} </u></h5>
-    <p class="card-text">Description: {{repos.description}}</p>
-    <p class="card-text">Language: {{repos.language}}</p>
-    <p class="card-text text-muted"> <i><i> Created {{repos.created_at | date}} </i></i></p>
-  </div>
-</div>
-
-
- -->
