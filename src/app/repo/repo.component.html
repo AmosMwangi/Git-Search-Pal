@@ -1,5 +1,5 @@
 <div class="container">
-    <app-form (searchOutput)="repoSearch($event)"></app-form>
+    <app-searchform (searchOutput)="repoSearch($event)"></app-searchform>
     <div class="col-md-3"  *ngFor="let repos of repo">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
