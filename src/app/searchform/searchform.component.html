@@ -1,1 +1,12 @@
-<p>searchform works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+            <form class="form-inline">
+                <input type="text" placeholder="Username" name="searchName" [(ngModel)]="searchName">
+                <button (click) = "search()">Search</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
