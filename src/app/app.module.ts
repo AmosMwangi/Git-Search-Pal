@@ -8,6 +8,7 @@ import { RepoComponent } from './repo/repo.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchformComponent } from './searchform/searchform.component';
 import { DatePipe } from './date.pipe';
+import { HightlightDirective } from './hightlight.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DatePipe } from './date.pipe';
     RepoComponent,
     NavbarComponent,
     SearchformComponent,
-    DatePipe
+    DatePipe,
+    HightlightDirective
   ],
   imports: [
     BrowserModule,
