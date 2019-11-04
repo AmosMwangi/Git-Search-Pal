@@ -1,5 +1,6 @@
 <section id="user">
     <div class="container">
+        <ng-progress></ng-progress>
         <app-searchform (searchOutput)= "searchs($event)"></app-searchform>
         <div class="card">
             <div class="card-body" id="card-body">
@@ -10,7 +11,7 @@
                     <div class="col-md-6" style="margin-top: 160px;">
                         <div class="card" style="width: 18rem;">
                             <div class="card-header">
-                                <h3 class="text-center">{{user.login}}</h3>
+                                <h1 class="text-center" style="font-family: 'Yeon Sung', cursive;">{{user.login}}</h1>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item" id="g">Repository:  {{user.public_repos}}</li>
@@ -18,8 +19,6 @@
                                 <li class="list-group-item" id="r">Followers: {{ user.followers }}</li>
                             </ul>
                         </div>
-                        <!-- <a href="{{user.html_url}}"><button class="btn btn-primary"> View in Github </button></a> -->
-
                         <a href="{{user.html_url}}" id="button" class="slide" >
                             <span></span>
                             <span></span>

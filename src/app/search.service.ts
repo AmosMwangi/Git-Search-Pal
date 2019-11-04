@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment';
+import { HttpClient } from '@angular/common/http';
 import { User } from './user';
 import { Repo } from './repo';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,6 @@ export class SearchService {
   }
 
   searchUser(searchName: string) {
-
     interface Response {
       url: string;
       login: string;
@@ -32,8 +32,6 @@ export class SearchService {
       created_at: Date;
     }
 
-
-    // get the username
     return new Promise((resolve, reject) => {
       this.http.get<Response>('https://api.github.com/users/' + searchName + '?access_token=' + environment.apiKey).toPromise()
       .then((result) => {
@@ -45,9 +43,7 @@ export class SearchService {
       });
     });
   }
-
   getRepos(searchName) {
-
     interface Repos{
       name: string;
       html_url: string;
@@ -57,6 +53,7 @@ export class SearchService {
       language: string;
       created_at: Date;
     }
+    
     return new Promise((resolve, reject) => {
       this.http.get<Repos>('https://api.github.com/users/' + searchName + '/repos?order=created&sort=asc?access_token=' + environment.apiKey)
       .toPromise().then(
